@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pantalla Negra Sonora</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-gap: 10px;
+      padding: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    button {
+      font-size: 600%;
+      /* Agrega este bloque para ajustar el margen del botón */
+      margin: 90px;
+      color: rgb(100, 2, 192);
+    }
+    .grid-item {
+      position: relative;
+      background: black;
+      color: rgb(255, 248, 248);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    .grid-item:hover {
+      transform: scale(1.1);
+    }
+
+    .wave-effect {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background: linear-gradient(to top, rgba(124, 41, 192, 0.5) 0%, transparent 100%);
+      transition: height 0.3s ease-in-out;
+    }
+
+    .grid-item:hover .wave-effect {
+      height: 100%;
+    }
+
+    /* Agrega este bloque para hacer los botones el triple de grandes */
+    button {
+      font-size: 100%;
+      background-color: transparent;
+    }
+    .grid-item:nth-child(1) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(2) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(3) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(4) .wave-effect { background: linear-gradient(to top, rgb(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(5) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(6) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(7) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(8) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(9) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(10) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(11) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(12) .wave-effect { background: linear-gradient(to top, rgba(20, 3, 172, 0.534) 0%, transparent 100%); }
+    .grid-item:nth-child(13) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(14) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(15) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(16) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(17) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(18) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(19) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(20) .wave-effect { background: linear-gradient(to top, rgba(243, 4, 4, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(21) .wave-effect { background: linear-gradient(to top, rgba(4, 243, 24, 0.767) 0%, transparent 100%); }
+    .grid-item:nth-child(22) .wave-effect { background: linear-gradient(to top, rgba(4, 243, 24, 0.767) 0%, transparent 100%); }
+    
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item" onclick="toggleSound('song1a.wav', this)">
+      <div class="wave-effect"></div>
+      <button>1</button>
+    </div>
+    <div class="grid-item" onclick="toggleSound('song2a.mp3', this)">
+      <div class="wave-effect"></div>
+      <button>2</button>
+    </div>
+    <div class="grid-item" onclick="toggleSound('song3a.mp3', this)">
+      <div class="wave-effect"></div>
+      <button>3</button>
+    </div>
+    <div class="grid-item" onclick="toggleSound('song4a.wav', this)">
+      <div class="wave-effect"></div>
+      <button>4</button>
+    </div>
+    <div class="grid-item" onclick="toggleSound('song5a.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>5</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song6a.wav', this)">
+        <div class="wave-effect"></div>
+        <button>6</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song7a.wav', this)">
+        <div class="wave-effect"></div>
+        <button>7</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song8a.wav', this)">
+        <div class="wave-effect"></div>
+        <button>8</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song9a.wav', this)">
+        <div class="wave-effect"></div>
+        <button>9</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song10a.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>10</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song11a.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>11</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song12a.wav', this)">
+        <div class="wave-effect"></div>
+        <button>12</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song12r.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>13</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song13r.wav', this)">
+        <div class="wave-effect"></div>
+        <button>14</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song14r.wav', this)">
+        <div class="wave-effect"></div>
+        <button>15</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song15r.wav', this)">
+        <div class="wave-effect"></div>
+        <button>16</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song16r.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>17</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song17r.wav', this)">
+        <div class="wave-effect"></div>
+        <button>18</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song18r.wav', this)">
+        <div class="wave-effect"></div>
+        <button>19</button>
+        
+      </div>
+      <div class="grid-item" onclick="toggleSound('song19r.wav', this)">
+        <div class="wave-effec"></div>
+        <button>20</button>
+      </div>
+      <div class="grid-item" onclick="toggleSound('song20v.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>21</button>
+        
+      </div>
+      <div class="grid-item" onclick="toggleSound('song21v.mp3', this)">
+        <div class="wave-effect"></div>
+        <button>22</button>
+        
+      </div>
+      <div class="grid-item" onclick="toggleSound('', this)">
+        <div class="hover"></div>
+        <button></button>
+        
+     
+    
+    <!-- Repite este bloque para agregar más elementos grid-item -->
+    <!-- Por ejemplo:
+    <div class="grid-item" onclick="toggleSound('song5.mp3', this)">
+      <div class="wave-effect"></div>
+      <button>¡Haz clic aquí!</button>
+    </div>
+    -->
+  </div>
+
+  <script>
+    function toggleSound(soundFile, button) {
+      const audio = new Audio(soundFile);
+      if (audio.paused) {
+        audio.play();
+        button.textContent = 'Pausar';
+        button.onclick = function() {
+          audio.pause();
+          button.textContent = 'Reproducir';
+          button.onclick = function() {
+            toggleSound(soundFile, button);
+          };
+        };
+      } else {
+        audio.pause();
+        button.textContent = 'Reproducir';
+      }
+    }
+  </script>
+</body>
+</html>
